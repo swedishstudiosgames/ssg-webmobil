@@ -7,106 +7,34 @@
     <title>SwedishStudios&nbsp;Games&nbsp;-&nbsp;Store</title>
    </head>
   <body>
-    <br>
-    <div id="shdw2">
-      <section>
-        <p></p>
-       </section>
-      <article>
-        <h5>Shared&nbsp;VPN&nbsp;-&nbsp;$1.99</h5>
-        <div id="paypal-button-container-P-9SW2968467179130KMFCIEMY"></div>
-        <script type="text/javasctipt"src="https://www.paypal.com/sdk/js?client-id=AdbvCdvTj8jUILEM8c0CCYvyYoS-r4qdPT3VznjUsJ4PjO8ox9_cnZZW2bqibGLDe6E-nREqPQJC7Lha&vault=true&intent=subscription"data-sdk-integration-source="button-factory"></script>
-        <script type="text/javasctipt">
-          paypal.Buttons({
-          style: {
-          shape: 'pill',
-          color: 'gold',
-          layout: 'vertical',
-          label: 'subscribe'
-          },
-          createSubscription: function(data, actions) {
-          return actions.subscription.create({
-          /* Creates the subscription */
-          plan_id: 'P-9SW2968467179130KMFCIEMY'
-          });
-          },
-          onApprove: function(data, actions) {
-          alert(data.subscriptionID);
-          // You can add optional success message for the subscriber here
-          }
-          }).render('#paypal-button-container-P-9SW2968467179130KMFCIEMY');
-          // Renders the PayPal button
-         </script>
-       </article>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-     </div>
+    <section>
+      <p></p>
+     </section>
+    <article>
+      <h5>Shared&nbsp;VPN&nbsp;-&nbsp;$1.99</h5>
+      <div id="paypal-button-container-P-9SW2968467179130KMFCIEMY"></div>
+      <script type="text/javasctipt"src="https://www.paypal.com/sdk/js?client-id=AdbvCdvTj8jUILEM8c0CCYvyYoS-r4qdPT3VznjUsJ4PjO8ox9_cnZZW2bqibGLDe6E-nREqPQJC7Lha&vault=true&intent=subscription"data-sdk-integration-source="button-factory"></script>
+      <script type="text/javasctipt">
+        paypal.Buttons({
+        style: {
+        shape: 'pill',
+        color: 'gold',
+        layout: 'vertical',
+        label: 'subscribe'
+        },
+        createSubscription: function(data, actions) {
+        return actions.subscription.create({
+        /* Creates the subscription */
+        plan_id: 'P-9SW2968467179130KMFCIEMY'
+        });
+        },
+        onApprove: function(data, actions) {
+        alert(data.subscriptionID);
+        // You can add optional success message for the subscriber here
+        }
+        }).render('#paypal-button-container-P-9SW2968467179130KMFCIEMY');
+        // Renders the PayPal button
+       </script>
+     </article>
    </body>
  </html>
