@@ -1,27 +1,41 @@
 <html>
 <head>
     <style>
-        h1 {
-            color: blue;
+        /* CSS code goes here */
+        #output {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
         }
     </style>
-</head>
-<body>
-    <h1>Hello, world!</h1>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/pyodide/v0.18.1/full/pyodide.js"></script>
-    <script type="text/python">
-        import sys
-        print("This is Python", sys.version, "running in the browser")
-    </script>
+</head>
+<body>
+    <h1>Web based sandbox for testing code</h1>
+    <p>Enter your Python code in the textarea below and click the Run button to execute it.</p>
+    <textarea id="code" rows="10" cols="50">
+# Python code goes here
+print("Hello, world!")
+    </textarea>
+    <button id="run">Run</button>
+    <div id="output"></div>
     <script>
-        // Load Pyodide
-        window.languagePluginLoader.then(() => {
-            // Run Python code
-            pyodide.runPython(`
-                from js import document
-                document.querySelector("h1").innerHTML += " from Python"
-            `);
+        // JavaScript code goes here
+        window.languagePluginUrl = 'https://cdn.jsdelivr.net/pyodide/v0.18.1/full/';
+        window.pyodideReady = languagePluginLoader.then(() => {
+            pyodide.loadPackage(['micropip']);
+            return pyodide;
+        });
+
+        $(document).ready(function() {
+            $("#run").click(function() {
+                var code = $("#code").val();
+                pyodideReady.then((pyodide) => {
+                    var output = pyodide.runPython(code);
+                    $("#output").html(output);
+                });
+            });
         });
     </script>
 </body>
