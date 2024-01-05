@@ -1,0 +1,55 @@
+<html>
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    #editor {
+      width: 50%;
+      height: 100vh;
+      float: left;
+      font-family: monospace;
+      font-size: 16px;
+    }
+    #preview {
+      width: 50%;
+      height: 100vh;
+      float: right;
+      border: 1px solid black;
+    }
+    #run {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      background: green;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <textarea id="editor" placeholder="Type your code here"></textarea>
+  <iframe id="preview"></iframe>
+  <button id="run">Run</button>
+  <script>
+    // Get the elements
+    var editor = document.getElementById("editor");
+    var preview = document.getElementById("preview");
+    var run = document.getElementById("run");
+
+    // Run the code when the button is clicked
+    run.addEventListener("click", function() {
+      // Get the code from the editor
+      var code = editor.value;
+
+      // Write the code to the preview iframe
+      preview.contentWindow.document.open();
+      preview.contentWindow.document.write(code);
+      preview.contentWindow.document.close();
+    });
+  </script>
+</body>
+</html>
